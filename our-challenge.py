@@ -32,13 +32,15 @@ def count_letters_no_spaces(full_name):
     # your code here
     letter_count = {}
     for letter in full_name:
+
+        if letter == " ":
+            continue
+
         if letter not in letter_count:
-            if letter == " ":
-                continue
-            else:
-                letter_count[letter] = 1
+            letter_count[letter] = 1
         else:
             letter_count[letter] += 1
+    
     return letter_count
 
 
@@ -54,15 +56,18 @@ def count_letters_no_spaces_punctuation(full_name):
     # your code here
     letter_count = {}
     for letter in full_name:
+        
+        if letter == " ":
+            continue
+        
+        if letter.isalnum() is False:
+            continue
+        
         if letter not in letter_count:
-            if letter == " ":
-                continue
-            if letter.isalnum() is False:
-                continue
-            else:
-                letter_count[letter] = 1
+            letter_count[letter] = 1
         else:
             letter_count[letter] += 1
+    
     return letter_count
 
 
@@ -77,15 +82,18 @@ def count_letters_no_spaces_punctuation_case_sensitivity(full_name):
     # your code here
     letter_count = {}
     for letter in full_name.lower():
+
+        if letter == " ":
+            continue
+
+        if letter.isalnum() is False:
+            continue
+
         if letter not in letter_count:
-            if letter == " ":
-                continue
-            if letter.isalnum() is False:
-                continue
-            else:
-                letter_count[letter] = 1
+            letter_count[letter] = 1
         else:
             letter_count[letter] += 1
+    
     return letter_count
 
 
